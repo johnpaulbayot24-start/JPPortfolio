@@ -418,10 +418,18 @@ footer {
     padding: 22px;
   }
 
-  .profile-photo {
-    width: 200px;
-    height: 250px;
-  }
+  
+.profile-photo {
+  display: block;
+  width: 280px;
+  height: 280px;
+  object-fit: cover;
+  object-position: center top;
+  border: 3px solid var(--dark);
+  border-radius: 0;
+  margin-bottom: 20px;
+}
+
 
   .skills-grid,
   .projects-grid {
