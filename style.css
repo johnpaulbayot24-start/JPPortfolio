@@ -227,14 +227,11 @@ h2 {
 }
 
 .profile-photo {
-  display: block;
-  width: 230px;
-  height: 270px;
-  object-fit: cover;
-  object-position: center top;
-  border: 3px solid var(--dark);
-  border-radius: 120px 120px 15px 15px;
-  margin-bottom: 20px;
+    width: 280px;
+    height: 280px;
+    object-fit: cover;
+    display: block;
+    border-radius: 0 !important;
 }
 
 .hero-art h2 {
@@ -574,4 +571,19 @@ button:focus-visible {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
   }
+}
+/* Force profile image and its container to be square */
+.profile-photo,
+.profile-image-container,
+.profile-container img {
+    border-radius: 0 !important;
+    clip-path: none !important;
+    overflow: visible !important;
+}
+
+/* Remove rounded corners from the image wrapper */
+.profile-image-container,
+.profile-container {
+    border-radius: 0 !important;
+    overflow: visible !important;
 }
