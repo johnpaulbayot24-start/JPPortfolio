@@ -11,316 +11,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
 
-  <style>
-    :root {
-      --bg: #f5f3eb;
-      --dark: #222820;
-      --green: #758962;
-      --lime: #dfff70;
-      --orange: #fb8c69;
-      --muted: #596056;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-      scroll-padding-top: 85px;
-    }
-
-    body {
-      background: var(--bg);
-      color: var(--dark);
-      font-family: 'DM Sans', sans-serif;
-      line-height: 1.7;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .container {
-      width: min(1100px, 90%);
-      margin: auto;
-    }
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      background: var(--bg);
-      border-bottom: 1px solid #d7d9ca;
-    }
-
-    nav {
-      min-height: 75px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-    }
-
-    .logo {
-      font: 800 24px 'Outfit', sans-serif;
-    }
-
-    .logo span {
-      color: var(--green);
-    }
-
-    nav ul {
-      display: flex;
-      list-style: none;
-      gap: 25px;
-    }
-
-    nav ul a:hover {
-      color: var(--green);
-    }
-
-    .menu-toggle {
-      display: none;
-      border: 0;
-      background: transparent;
-      font-size: 25px;
-      cursor: pointer;
-    }
-
-    section {
-      padding: 90px 0;
-    }
-
-    .hero {
-      min-height: 650px;
-      display: grid;
-      grid-template-columns: 1.2fr .8fr;
-      align-items: center;
-      gap: 50px;
-    }
-
-    .eyebrow {
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      color: var(--green);
-    }
-
-    h1, h2, h3 {
-      font-family: 'Outfit', sans-serif;
-      line-height: 1.2;
-    }
-
-    h1 {
-      font-size: clamp(45px, 6vw, 75px);
-      margin: 22px 0;
-      letter-spacing: -2px;
-    }
-
-    h1 span, h2 em {
-      color: var(--green);
-      font-style: normal;
-    }
-
-    .hero p {
-      color: var(--muted);
-      max-width: 520px;
-    }
-
-    .button {
-      display: inline-block;
-      background: var(--dark);
-      color: white;
-      padding: 13px 22px;
-      border-radius: 5px;
-      margin: 25px 12px 0 0;
-      font-weight: 700;
-      transition: .2s;
-    }
-
-    .button:hover {
-      transform: translateY(-3px);
-    }
-
-    .button.light {
-      background: var(--lime);
-      color: var(--dark);
-    }
-
-    .hero-art {
-      min-height: 380px;
-      background: var(--lime);
-      border: 2px solid var(--dark);
-      border-radius: 48% 48% 8px 8px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 30px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero-art .symbol {
-      font-size: 100px;
-      color: var(--orange);
-      line-height: 1.2;
-    }
-
-    .hero-art h2 {
-      font-size: 30px;
-    }
-
-    .hero-art p {
-      color: var(--dark);
-    }
-
-    .section-label {
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      border-top: 1px solid #c9cbbb;
-      padding-top: 15px;
-      margin-bottom: 35px;
-    }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 55px;
-    }
-
-    h2 {
-      font-size: clamp(36px, 5vw, 55px);
-      margin-bottom: 22px;
-    }
-
-    .muted {
-      color: var(--muted);
-    }
-
-    .facts {
-      margin-top: 25px;
-    }
-
-    .facts p {
-      margin: 8px 0;
-    }
-
-    .skills-section {
-      background: #e9ecdf;
-    }
-
-    .skills-grid, .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-      margin-top: 30px;
-    }
-
-    .card {
-      padding: 25px;
-      background: #fffefa;
-      border: 1px solid #d7d9ca;
-      transition: transform .2s, box-shadow .2s;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 6px 6px 0 var(--lime);
-    }
-
-    .card h3 {
-      font-size: 23px;
-      margin: 12px 0;
-    }
-
-    .card p {
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .tag {
-      display: inline-block;
-      border: 1px solid #b7c1aa;
-      padding: 4px 9px;
-      margin: 12px 4px 0 0;
-      font-size: 12px;
-    }
-
-    .education-item {
-      padding: 22px;
-      border-left: 4px solid var(--green);
-      background: #fffefa;
-      margin: 18px 0;
-    }
-
-    .contact-section {
-      background: var(--dark);
-      color: white;
-      text-align: center;
-    }
-
-    .contact-section p {
-      color: #d0d4cb;
-      max-width: 600px;
-      margin: 0 auto;
-    }
-
-    footer {
-      padding: 25px;
-      text-align: center;
-      font-size: 13px;
-      color: var(--muted);
-    }
-
-    @media (max-width: 750px) {
-      .menu-toggle {
-        display: block;
-      }
-
-      nav ul {
-        display: none;
-        position: absolute;
-        top: 75px;
-        left: 0;
-        right: 0;
-        flex-direction: column;
-        padding: 20px 5%;
-        background: var(--bg);
-        border-bottom: 1px solid #d7d9ca;
-      }
-
-      nav ul.open {
-        display: flex;
-      }
-
-      .hero, .about-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .hero {
-        padding-top: 60px;
-      }
-
-      .hero-art {
-        min-height: 300px;
-      }
-
-      .skills-grid, .projects-grid {
-        grid-template-columns: 1fr;
-      }
-
-      section {
-        padding: 65px 0;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 
 <body>
@@ -328,8 +20,9 @@
     <nav class="container">
       <a class="logo" href="#home">JP<span>.BAYOT</span></a>
 
-      <button class="menu-toggle" aria-label="Open menu"
-        aria-expanded="false" aria-controls="nav-links">☰</button>
+      <button class="menu-toggle" type="button"
+        aria-label="Open menu" aria-expanded="false"
+        aria-controls="nav-links">☰</button>
 
       <ul id="nav-links">
         <li><a href="#home">Home</a></li>
@@ -344,9 +37,14 @@
 
   <main>
     <section class="hero container" id="home">
-      <div>
+      <div class="hero-content">
         <span class="eyebrow">STUDENT PORTFOLIO / 2026</span>
-        <h1>Building ideas<br><span>into something</span><br><em>remarkable.</em></h1>
+
+        <h1>
+          Building ideas<br>
+          <span>into something</span><br>
+          <em>remarkable.</em>
+        </h1>
 
         <p>
           Hi, I'm <strong>John Paul Bayot</strong>, an aspiring web developer
@@ -354,14 +52,20 @@
           building responsive websites.
         </p>
 
-        <a class="button" href="#projects">Explore Projects ↗</a>
-        <a class="button light" href="#about">About Me ↓</a>
+        <div class="hero-buttons">
+          <a class="button" href="#projects">Explore Projects ↗</a>
+          <a class="button light" href="#about">About Me ↓</a>
+        </div>
       </div>
 
       <div class="hero-art">
-        <div class="symbol">✳</div>
-        <h2>Learn. Create. Improve.</h2>
-        <p>Learning today. Creating tomorrow.</p>
+        <img
+          src="Johnpaul.jfif"
+          alt="Photo of John Paul Bayot"
+          class="profile-photo"
+        >
+        <h2>John Paul Bayot</h2>
+        <p>Aspiring Web Developer</p>
       </div>
     </section>
 
@@ -378,7 +82,7 @@
             practical web experiences.
           </p>
 
-          <p class="muted" style="margin-top: 15px;">
+          <p class="muted paragraph-gap">
             My goal is to become a skilled front-end developer by improving
             my coding abilities, learning new tools, and creating useful,
             accessible, and responsive websites.
@@ -396,10 +100,11 @@
     <section class="skills-section" id="skills">
       <div class="container">
         <div class="section-label">02 / MY TOOLKIT</div>
-        <h2>Skills & <em>interests.</em></h2>
+        <h2>Skills &amp; <em>interests.</em></h2>
 
         <div class="skills-grid">
           <article class="card">
+            <span class="card-number">01</span>
             <h3>Web Development</h3>
             <p>Creating structured and responsive websites.</p>
             <span class="tag">HTML5</span>
@@ -408,6 +113,7 @@
           </article>
 
           <article class="card">
+            <span class="card-number">02</span>
             <h3>Creative Design</h3>
             <p>Exploring website layouts and user experiences.</p>
             <span class="tag">UI Design</span>
@@ -416,6 +122,7 @@
           </article>
 
           <article class="card">
+            <span class="card-number">03</span>
             <h3>Problem Solving</h3>
             <p>Practicing debugging, research, and continuous learning.</p>
             <span class="tag">Debugging</span>
@@ -429,27 +136,38 @@
     <section class="container" id="projects">
       <div class="section-label">03 / SELECTED WORK</div>
       <h2>Featured <em>projects.</em></h2>
-      <p class="muted">A selection of projects I have built or am developing.</p>
+      <p class="muted">
+        A selection of projects I have built or am developing.
+      </p>
 
       <div class="projects-grid">
         <article class="card">
+          <span class="card-number">PROJECT 01</span>
           <h3>Personal Portfolio</h3>
-          <p>A responsive website introducing my background, skills, and goals.</p>
+          <p>
+            A responsive website introducing my background, skills, and goals.
+          </p>
           <span class="tag">HTML</span>
           <span class="tag">CSS</span>
           <span class="tag">JavaScript</span>
         </article>
 
         <article class="card">
+          <span class="card-number">PROJECT 02</span>
           <h3>Interactive Calculator</h3>
-          <p>A practice project for JavaScript logic and interactive elements.</p>
+          <p>
+            A practice project for JavaScript logic and interactive elements.
+          </p>
           <span class="tag">JavaScript</span>
           <span class="tag">CSS</span>
         </article>
 
         <article class="card">
+          <span class="card-number">PROJECT 03</span>
           <h3>Landing Page</h3>
-          <p>A simple website focused on page structure and responsive design.</p>
+          <p>
+            A simple website focused on page structure and responsive design.
+          </p>
           <span class="tag">HTML5</span>
           <span class="tag">CSS3</span>
         </article>
@@ -461,9 +179,10 @@
       <h2>My <em>education.</em></h2>
 
       <div class="education-item">
+        <span class="education-year">CURRENT</span>
         <h3>Cebu Eastern College</h3>
         <p class="muted">College — Current Enrollment</p>
-        <p>Focus: Information Technology</p>
+        <p>Field of study: Information Technology</p>
       </div>
 
       <div class="education-item">
@@ -480,48 +199,24 @@
     <section class="contact-section" id="contact">
       <div class="container">
         <span class="eyebrow">05 / LET'S CONNECT</span>
-        <h2 style="margin-top: 20px;">Have something<br><em>in mind?</em></h2>
+        <h2>Have something<br><em>in mind?</em></h2>
 
         <p>
           I'm interested in learning, collaborating, and improving my skills.
           Feel free to contact me about projects or opportunities.
         </p>
 
-        <a class="button light"
-          href="mailto:johnpaulbayot24@gmail.com">Send Me an Email ↗</a>
+        <a class="button light email-button"
+          href="mailto:johnpaulbayot24@gmail.com">
+          Send Me an Email ↗
+        </a>
       </div>
     </section>
   </main>
 
   <footer>
     <p>© <span id="year"></span> John Paul Bayot | Student Portfolio</p>
+    <a href="#home" class="back-to-top">Back to top ↑</a>
   </footer>
-
-  <script>
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navLinks = document.querySelector('#nav-links');
-
-    menuToggle.addEventListener('click', () => {
-      const isOpen = navLinks.classList.toggle('open');
-      menuToggle.setAttribute('aria-expanded', String(isOpen));
-      menuToggle.setAttribute(
-        'aria-label',
-        isOpen ? 'Close menu' : 'Open menu'
-      );
-      menuToggle.textContent = isOpen ? '✕' : '☰';
-    });
-
-    navLinks.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        navLinks.classList.remove('open');
-        menuToggle.setAttribute('aria-expanded', 'false');
-        menuToggle.setAttribute('aria-label', 'Open menu');
-        menuToggle.textContent = '☰';
-      });
-    });
-
-    document.querySelector('#year').textContent =
-      new Date().getFullYear();
-  </script>
 </body>
 </html>
