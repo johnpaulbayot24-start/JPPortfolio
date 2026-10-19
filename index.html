@@ -4,27 +4,38 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="John Paul Bayot's personal web development portfolio">
+
+  <meta name="description"
+    content="John Paul Bayot's personal portfolio showcasing web development, capstone, game development, and IT projects.">
+
   <title>John Paul Bayot | Portfolio</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
 </head>
 
 <body>
-  <header>
-    <nav class="container">
+
+  <!-- NAVIGATION -->
+  <header class="site-header">
+    <nav class="container navbar">
       <a class="logo" href="#home">JP<span>.BAYOT</span></a>
 
-      <button class="menu-toggle" type="button"
-        aria-label="Open menu" aria-expanded="false"
-        aria-controls="nav-links">☰</button>
+      <button class="menu-toggle"
+        type="button"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+        aria-controls="nav-links">
+        ☰
+      </button>
 
-      <ul id="nav-links">
+      <ul class="nav-links" id="nav-links">
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#skills">Skills</a></li>
@@ -36,7 +47,10 @@
   </header>
 
   <main>
+
+    <!-- HERO -->
     <section class="hero container" id="home">
+
       <div class="hero-content">
         <span class="eyebrow">STUDENT PORTFOLIO / 2026</span>
 
@@ -46,7 +60,7 @@
           <em>remarkable.</em>
         </h1>
 
-        <p>
+        <p class="hero-description">
           Hi, I'm <strong>John Paul Bayot</strong>, an aspiring web developer
           and student passionate about technology, creative design, and
           building responsive websites.
@@ -54,35 +68,42 @@
 
         <div class="hero-buttons">
           <a class="button" href="#projects">Explore Projects ↗</a>
-          <a class="button light" href="#about">About Me ↓</a>
+          <a class="button button-light" href="#about">About Me ↓</a>
         </div>
       </div>
 
       <div class="hero-art">
-        <img
-          src="johnpaul.jfif"
-          alt="Photo of John Paul Bayot"
-          class="profile-photo"
-        >
-        <h2>John Paul Bayot</h2>
-        <p>Aspiring Web Developer</p>
+        <div class="profile-frame">
+          <img
+            src="johnpaul.jfif"
+            alt="Photo of John Paul Bayot"
+            class="profile-photo">
+        </div>
+
+        <div class="profile-caption">
+          <h2>John Paul Bayot</h2>
+          <p>Aspiring Web Developer</p>
+        </div>
       </div>
+
     </section>
 
-    <section class="container" id="about">
+    <!-- ABOUT -->
+    <section class="section container" id="about">
+
       <div class="section-label">01 / INTRODUCTION</div>
 
       <div class="about-grid">
         <h2>A little about<br><em>my journey.</em></h2>
 
-        <div>
+        <div class="about-content">
           <p class="muted">
             I'm John Paul Bayot, a student at Cebu Eastern College.
-            I enjoy learning about technology and transforming ideas into
-            practical web experiences.
+            I enjoy learning about technology and transforming ideas
+            into practical web experiences.
           </p>
 
-          <p class="muted paragraph-gap">
+          <p class="muted">
             My goal is to become a skilled front-end developer by improving
             my coding abilities, learning new tools, and creating useful,
             accessible, and responsive websites.
@@ -95,136 +116,201 @@
           </div>
         </div>
       </div>
+
     </section>
 
-    <section class="skills-section" id="skills">
+    <!-- SKILLS -->
+    <section class="section skills-section" id="skills">
       <div class="container">
+
         <div class="section-label">02 / MY TOOLKIT</div>
         <h2>Skills &amp; <em>interests.</em></h2>
 
         <div class="skills-grid">
+
           <article class="card">
-            <span class="card-number">01</span>
+            <span class="card-number">01 / SKILLS</span>
             <h3>Web Development</h3>
             <p>Creating structured and responsive websites.</p>
-            <span class="tag">HTML5</span>
-            <span class="tag">CSS3</span>
-            <span class="tag">JavaScript</span>
+
+            <div class="tags">
+              <span class="tag">HTML5</span>
+              <span class="tag">CSS3</span>
+              <span class="tag">JavaScript</span>
+            </div>
           </article>
 
           <article class="card">
-            <span class="card-number">02</span>
+            <span class="card-number">02 / DESIGN</span>
             <h3>Creative Design</h3>
             <p>Exploring website layouts and user experiences.</p>
-            <span class="tag">UI Design</span>
-            <span class="tag">Flexbox</span>
-            <span class="tag">Grid</span>
+
+            <div class="tags">
+              <span class="tag">UI Design</span>
+              <span class="tag">Flexbox</span>
+              <span class="tag">Grid</span>
+            </div>
           </article>
 
           <article class="card">
-            <span class="card-number">03</span>
+            <span class="card-number">03 / GROWTH</span>
             <h3>Problem Solving</h3>
             <p>Practicing debugging, research, and continuous learning.</p>
-            <span class="tag">Debugging</span>
-            <span class="tag">Teamwork</span>
-            <span class="tag">Git</span>
+
+            <div class="tags">
+              <span class="tag">Debugging</span>
+              <span class="tag">Teamwork</span>
+              <span class="tag">Git</span>
+            </div>
           </article>
+
         </div>
       </div>
     </section>
 
-    <section class="container" id="projects">
+    <!-- PROJECTS -->
+    <section class="section container" id="projects">
+
       <div class="section-label">03 / SELECTED WORK</div>
       <h2>Featured <em>projects.</em></h2>
-      <p class="muted">
-        A selection of projects I have built or am developing.
+
+      <p class="muted section-intro">
+        A selection of academic and personal projects showcasing my
+        interests in software development and information technology.
       </p>
 
       <div class="projects-grid">
-  <article class="card">
-    <span class="card-number">PROJECT 01</span>
 
-    <div class="project-image">
-      <img src="image/echospeech.jpg" alt="Personal Portfolio Preview">
-    </div>
-    <div class="project-status">CAPSTONE PROJECT</div>
+        <!-- PROJECT 01 -->
+        <article class="card project-card">
+          <span class="card-number">PROJECT 01</span>
 
-    <h3>Echospeech</h3>
-    <p>
-   An Android mobile application concept with gamified learning activities to support child speech development at home in Barangay Buhisan.
-    </p>
+          <div class="project-image">
+            <img
+              src="image/echospeech.jpg"
+              alt="EchoSpeech capstone project preview"
+              loading="lazy">
+          </div>
 
-    <span class="tag">HTML</span>
-    <span class="tag">CSS</span>
-    <span class="tag">JavaScript</span>
-  </article>
-</div>
+          <span class="project-status">CAPSTONE PROJECT</span>
 
-  <article class="card">
-    <span class="card-number">PROJECT 02</span>
+          <h3>EchoSpeech</h3>
 
-    <div class="project-image">
-      <img src="image/mysticquest.png" alt="Personal Portfolio Preview">
-    </div>
-    <div class="project-status">IT Free Elective</div>
-    
+          <p>
+            An Android mobile application concept featuring gamified
+            learning activities to support children's speech development
+            at home in Barangay Buhisan.
+          </p>
 
-    <h3>Game Development (Mystic Quest)</h3>
-    <p>
-     A game development project that demonstrates programming skills, game mechanics, and interactive gameplay design.
-    </p>
+          <div class="tags">
+            <span class="tag">Android</span>
+            <span class="tag">Speech Development</span>
+            <span class="tag">Gamification</span>
+          </div>
+        </article>
 
-    <span class="tag">HTML</span>
-    <span class="tag">CSS</span>
-    <span class="tag">JavaScript</span>
-  </article>
-</div>
+        <!-- PROJECT 02 -->
+        <article class="card project-card">
+          <span class="card-number">PROJECT 02</span>
 
-        
-  <article class="card">
-    <span class="card-number">PROJECT 03</span>
+          <div class="project-image">
+            <img
+              src="image/mysticquest.png"
+              alt="Mystic Quest game development project preview"
+              loading="lazy">
+          </div>
 
-    <div class="project-image">
-      <img src="image/DNS.png" alt="Personal Portfolio Preview">
-    </div>
-    <div class="project-status">Sam Project</div>
+          <span class="project-status">IT FREE ELECTIVE</span>
 
-    <h3>Windows Server AD DS & DNS Setup</h3>
-    <p>
-     A server configuration project focused on setting up Active Directory Domain Services (AD DS) and DNS to manage domain users, computers, and network name resolution. Technologies: Windows Server, Active Directory Domain Services, DNS.
-    </p>
+          <h3>Mystic Quest</h3>
 
-    <span class="tag">HTML</span>
-    <span class="tag">CSS</span>
-    <span class="tag">JavaScript</span>
-  </article>
-</div>
+          <p>
+            A game development project demonstrating programming skills,
+            game mechanics, and interactive gameplay design.
+          </p>
 
-    <section class="container" id="education">
-      <div class="section-label">04 / EDUCATION</div>
-      <h2>My <em>education.</em></h2>
+          <div class="tags">
+            <span class="tag">Game Development</span>
+            <span class="tag">Programming</span>
+            <span class="tag">Game Design</span>
+          </div>
+        </article>
 
-      <div class="education-item">
-        <span class="education-year">CURRENT</span>
-        <h3>Cebu Eastern College</h3>
-        <p class="muted">College — Current Enrollment</p>
-        <p>Field of study: Information Technology</p>
-      </div>
+        <!-- PROJECT 03 -->
+        <article class="card project-card">
+          <span class="card-number">PROJECT 03</span>
 
-      <div class="education-item">
-        <h3>Vallehermoso National High School</h3>
-        <p class="muted">High School — Completed Studies</p>
-      </div>
+          <div class="project-image">
+            <img
+              src="image/DNS.png"
+              alt="Windows Server Active Directory and DNS setup"
+              loading="lazy">
+          </div>
 
-      <div class="education-item">
-        <h3>Vallehermoso Elementary School</h3>
-        <p class="muted">Elementary — Completed Studies</p>
+          <span class="project-status">SYSTEM ADMINISTRATION</span>
+
+          <h3>Windows Server AD DS &amp; DNS</h3>
+
+          <p>
+            A server configuration project focused on setting up
+            Active Directory Domain Services and DNS to manage domain
+            users, computers, and network name resolution.
+          </p>
+
+          <div class="tags">
+            <span class="tag">Windows Server</span>
+            <span class="tag">AD DS</span>
+            <span class="tag">DNS</span>
+          </div>
+        </article>
+
       </div>
     </section>
 
-    <section class="contact-section" id="contact">
+    <!-- EDUCATION -->
+    <section class="section education-section" id="education">
       <div class="container">
+
+        <div class="section-label">04 / EDUCATION</div>
+        <h2>My <em>education.</em></h2>
+
+        <div class="education-list">
+
+          <article class="education-item">
+            <span class="education-year">CURRENT</span>
+            <div>
+              <h3>Cebu Eastern College</h3>
+              <p class="muted">College — Currently Enrolled</p>
+              <p>Field of study: Information Technology</p>
+            </div>
+          </article>
+
+          <article class="education-item">
+            <span class="education-year">COMPLETED</span>
+            <div>
+              <h3>Vallehermoso National High School</h3>
+              <p class="muted">High School — Completed Studies</p>
+            </div>
+          </article>
+
+          <article class="education-item">
+            <span class="education-year">COMPLETED</span>
+            <div>
+              <h3>Vallehermoso Elementary School</h3>
+              <p class="muted">Elementary — Completed Studies</p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact-section" id="contact">
+      <div class="container contact-content">
+
         <span class="eyebrow">05 / LET'S CONNECT</span>
+
         <h2>Have something<br><em>in mind?</em></h2>
 
         <p>
@@ -232,17 +318,24 @@
           Feel free to contact me about projects or opportunities.
         </p>
 
-        <a class="button light email-button"
+        <a
+          class="button button-light email-button"
           href="mailto:johnpaulbayot24@gmail.com">
           Send Me an Email ↗
         </a>
+
       </div>
     </section>
+
   </main>
 
-  <footer>
-    <p>© <span id="year"></span> John Paul Bayot | Student Portfolio</p>
-    <a href="#home" class="back-to-top">Back to top ↑</a>
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <p>© <span id="year"></span> John Paul Bayot | Student Portfolio</p>
+      <a href="#home" class="back-to-top">Back to top ↑</a>
+    </div>
   </footer>
+
 </body>
 </html>
