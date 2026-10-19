@@ -1,4 +1,4 @@
-```css
+
 /* =========================
    1. VARIABLES & RESET
 ========================= */
@@ -265,197 +265,31 @@ p {
   color: var(--ink);
 }
 
-
-/* =========================
-   5. PROFESSIONAL PROFILE PHOTO
-========================= */
-
 .hero-art {
   width: 100%;
   max-width: 390px;
   justify-self: end;
-  position: relative;
-  z-index: 1;
 }
 
-/* Main frame */
 .profile-frame {
-  position: relative;
-  isolation: isolate;
   width: 100%;
   aspect-ratio: 4 / 5;
-  overflow: visible;
-  border: none;
-  border-radius: 0;
-  background: transparent;
-  transition: transform 0.4s ease;
-}
-
-/* Lime offset panel behind the photo */
-.profile-frame::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -2;
-  background: var(--lime);
-  border: 1px solid var(--ink);
-  transform: translate(12px, 12px);
-  transition:
-    transform 0.4s ease,
-    background 0.4s ease;
-}
-
-/* Offset technical outline */
-.profile-frame::after {
-  content: "";
-  position: absolute;
-  top: -12px;
-  left: -12px;
-  right: 12px;
-  bottom: 12px;
-  z-index: -1;
+  overflow: hidden;
   border: 1px solid var(--line);
-  pointer-events: none;
-  transition:
-    top 0.4s ease,
-    left 0.4s ease,
-    border-color 0.4s ease;
+  background: #e4e4d7;
+
+  /* Square corners */
+  border-radius: 0;
 }
 
-/* Your original photo */
 .profile-photo {
-  position: relative;
-  z-index: 1;
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
   border-radius: 0;
-  filter: saturate(0.92) contrast(1.04);
-  box-shadow: 0 12px 28px rgba(34, 40, 32, 0.09);
-  transition:
-    filter 0.4s ease,
-    box-shadow 0.4s ease;
 }
 
-/* Four decorative corner brackets */
-.profile-frame .frame-corner {
-  position: absolute;
-  z-index: 3;
-  width: 27px;
-  height: 27px;
-  border-style: solid;
-  border-color: var(--orange);
-  border-width: 0;
-  pointer-events: none;
-  transition:
-    width 0.35s ease,
-    height 0.35s ease;
-}
-
-.profile-frame .frame-corner-tl {
-  top: -5px;
-  left: -5px;
-  border-top-width: 3px;
-  border-left-width: 3px;
-}
-
-.profile-frame .frame-corner-tr {
-  top: -5px;
-  right: -5px;
-  border-top-width: 3px;
-  border-right-width: 3px;
-}
-
-.profile-frame .frame-corner-bl {
-  bottom: -5px;
-  left: -5px;
-  border-bottom-width: 3px;
-  border-left-width: 3px;
-}
-
-.profile-frame .frame-corner-br {
-  bottom: -5px;
-  right: -5px;
-  border-bottom-width: 3px;
-  border-right-width: 3px;
-}
-
-
-/* Optional caption, only shown if present in your HTML */
-.profile-frame .photo-caption {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 4;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 10px;
-  padding: 14px 12px;
-  background: rgba(34, 40, 32, 0.9);
-  color: var(--white);
-  font-size: 0.68rem;
-  letter-spacing: 1.2px;
-}
-
-.profile-frame .caption-index {
-  color: var(--lime);
-}
-
-
-/* Floating photo animation */
-@keyframes profileFloat {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-7px);
-  }
-}
-
-/* Gentle animation always runs on desktop */
-@media (prefers-reduced-motion: no-preference) {
-  .hero-art .profile-frame {
-    animation: profileFloat 4s ease-in-out infinite;
-  }
-}
-
-
-/* Hover interaction */
-@media (hover: hover) and (pointer: fine) {
-  .hero-art .profile-frame:hover {
-    animation-play-state: paused;
-    transform: translateY(-5px);
-  }
-
-  .hero-art .profile-frame:hover::before {
-    transform: translate(19px, 19px);
-    background: var(--orange);
-  }
-
-  .hero-art .profile-frame:hover::after {
-    top: -18px;
-    left: -18px;
-    border-color: var(--orange);
-  }
-
-  .hero-art .profile-frame:hover .profile-photo {
-    filter: saturate(1.08) contrast(1.06);
-    box-shadow: 0 20px 42px rgba(34, 40, 32, 0.16);
-  }
-
-  .hero-art .profile-frame:hover .frame-corner {
-    width: 35px;
-    height: 35px;
-  }
-}
-
-
-/* Profile caption */
 .profile-caption {
   padding-top: 18px;
   border-bottom: 1px solid var(--line);
@@ -474,7 +308,7 @@ p {
 
 
 /* =========================
-   6. ABOUT
+   5. ABOUT
 ========================= */
 
 .about-grid {
@@ -512,7 +346,7 @@ p {
 
 
 /* =========================
-   7. SKILLS
+   6. SKILLS
 ========================= */
 
 .skills-section {
@@ -530,7 +364,7 @@ p {
 
 
 /* =========================
-   8. CARDS
+   7. CARDS
 ========================= */
 
 .card {
@@ -539,6 +373,7 @@ p {
   background: var(--white);
   border: 1px solid var(--line);
   border-radius: 0;
+
   transition:
     transform 0.25s ease,
     border-color 0.25s ease,
@@ -592,7 +427,7 @@ p {
 
 
 /* =========================
-   9. PROJECTS
+   8. PROJECTS
 ========================= */
 
 .section-intro {
@@ -625,6 +460,8 @@ p {
   margin-bottom: 20px;
   overflow: hidden;
   background: #e8e8dd;
+
+  /* Square image corners */
   border-radius: 0;
 }
 
@@ -673,7 +510,7 @@ p {
 
 
 /* =========================
-   10. EDUCATION
+   9. EDUCATION
 ========================= */
 
 .education-section {
@@ -720,7 +557,7 @@ p {
 
 
 /* =========================
-   11. CONTACT
+   10. CONTACT
 ========================= */
 
 .contact-section {
@@ -766,7 +603,7 @@ p {
 
 
 /* =========================
-   12. FOOTER
+   11. FOOTER
 ========================= */
 
 .site-footer {
@@ -794,7 +631,7 @@ p {
 
 
 /* =========================
-   13. TABLET
+   12. TABLET
 ========================= */
 
 @media (max-width: 900px) {
@@ -824,7 +661,7 @@ p {
 
 
 /* =========================
-   14. MOBILE
+   13. MOBILE
 ========================= */
 
 @media (max-width: 640px) {
@@ -893,18 +730,6 @@ p {
     aspect-ratio: 4 / 4;
   }
 
-  /* Smaller decorative frame on mobile */
-  .profile-frame::before {
-    transform: translate(8px, 8px);
-  }
-
-  .profile-frame::after {
-    top: -8px;
-    left: -8px;
-    right: 8px;
-    bottom: 8px;
-  }
-
   .about-grid {
     grid-template-columns: 1fr;
     gap: 26px;
@@ -946,9 +771,387 @@ p {
 
 
 /* =========================
-   15. SMALL PHONES
+   14. SMALL PHONES
 ========================= */
 
 @media (max-width: 380px) {
   .container {
-    width: calc(
+    width: calc(100% - 28px);
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .button {
+    width: 100%;
+  }
+
+  .hero h1 {
+    font-size: 2.55rem;
+  }
+}
+
+
+/* =========================
+   15. ACCESSIBILITY
+========================= */
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid #8ba83f;
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+```css
+/* =========================================
+   PROFESSIONAL PROFILE PHOTO FRAME
+   CSS ONLY — KEEP YOUR HTML UNCHANGED
+========================================= */
+
+/* Main photo container */
+.profile-frame {
+  position: relative;
+  isolation: isolate;
+  border-radius: 0 !important;
+  overflow: visible !important;
+  background: transparent;
+  padding: 10px;
+}
+
+/* Offset frame behind your photo */
+.profile-frame::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 2px solid var(--ink);
+  background: var(--lime);
+  transform: translate(12px, 12px);
+  z-index: -2;
+  transition: transform 0.3s ease;
+}
+
+/* Decorative lime corner frame */
+.profile-frame::after {
+  content: "";
+  position: absolute;
+  top: -12px;
+  left: -12px;
+  width: 65px;
+  height: 65px;
+  border-top: 4px solid var(--orange);
+  border-left: 4px solid var(--orange);
+  z-index: 2;
+  pointer-events: none;
+  transition: width 0.3s ease, height 0.3s ease;
+}
+
+/* Keep the actual portrait square */
+.profile-frame img,
+.profile-photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0 !important;
+  position: relative;
+  z-index: 1;
+  filter: saturate(0.92) contrast(1.03);
+  transition: filter 0.35s ease;
+}
+
+/* Additional corner details */
+.profile-frame .frame-corner {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.profile-frame .frame-corner-tl {
+  top: 0;
+  left: 0;
+  border-top: 2px solid var(--lime);
+  border-left: 2px solid var(--lime);
+}
+
+.profile-frame .frame-corner-tr {
+  top: 0;
+  right: 0;
+  border-top: 2px solid var(--lime);
+  border-right: 2px solid var(--lime);
+}
+
+.profile-frame .frame-corner-bl {
+  bottom: 0;
+  left: 0;
+  border-bottom: 2px solid var(--lime);
+  border-left: 2px solid var(--lime);
+}
+
+.profile-frame .frame-corner-br {
+  bottom: 0;
+  right: 0;
+  border-bottom: 2px solid var(--lime);
+  border-right: 2px solid var(--lime);
+}
+
+/* Hover interaction */
+.profile-frame:hover::before {
+  transform: translate(17px, 17px);
+}
+
+.profile-frame:hover::after {
+  width: 85px;
+  height: 85px;
+}
+
+.profile-frame:hover img,
+.profile-frame:hover .profile-photo {
+  filter: saturate(1.08) contrast(1.05);
+}
+
+/* Subtle tech-style image caption, if already in your HTML */
+.profile-frame .photo-caption {
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  z-index: 4;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 12px;
+  background: rgba(34, 40, 32, 0.9);
+  color: var(--white);
+  font-size: 0.68rem;
+  letter-spacing: 1.2px;
+}
+
+.profile-frame .caption-index {
+  color: var(--lime);
+}
+
+/* Mobile adjustments */
+@media (max-width: 640px) {
+  .profile-frame {
+    padding: 7px;
+  }
+
+  .profile-frame::before {
+    transform: translate(8px, 8px);
+  }
+
+  .profile-frame::after {
+    top: -8px;
+    left: -8px;
+    width: 45px;
+    height: 45px;
+  }
+
+  .profile-frame:hover::before {
+    transform: translate(10px, 10px);
+  }
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .profile-frame,
+  .profile-frame::before,
+  .profile-frame::after,
+  .profile-frame img {
+    transition: none;
+  }
+}
+```
+```css
+/* =====================================
+   HERO PHOTO — PRO DEVELOPER EFFECT
+   Add to the bottom of style.css
+===================================== */
+
+.hero .profile-frame {
+  position: relative;
+  isolation: isolate;
+  overflow: visible !important;
+  border-radius: 0 !important;
+  background: transparent;
+  transform: translateY(0);
+  transition: transform 0.4s ease;
+}
+
+/* Layered offset frame */
+.hero .profile-frame::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background: var(--lime);
+  border: 1px solid var(--ink);
+  transform: translate(13px, 13px);
+  transition: transform 0.4s ease, background 0.4s ease;
+}
+
+/* Second decorative frame */
+.hero .profile-frame::after {
+  content: "";
+  position: absolute;
+  top: -14px;
+  left: -14px;
+  right: 14px;
+  bottom: 14px;
+  z-index: -1;
+  border: 1px solid var(--ink);
+  pointer-events: none;
+  transition: top 0.4s ease, left 0.4s ease;
+}
+
+/* Portrait styling */
+.hero .profile-frame img,
+.hero .profile-frame .profile-photo {
+  display: block;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0 !important;
+  filter: grayscale(12%) contrast(1.04);
+  box-shadow: 0 10px 30px rgba(34, 40, 32, 0.08);
+  transition:
+    transform 0.45s ease,
+    filter 0.45s ease,
+    box-shadow 0.45s ease;
+}
+
+/* Decorative corner brackets */
+.hero .profile-frame .frame-corner {
+  position: absolute;
+  z-index: 3;
+  width: 27px;
+  height: 27px;
+  border-color: var(--orange);
+  border-style: solid;
+  border-width: 0;
+  pointer-events: none;
+  transition: width 0.35s ease, height 0.35s ease;
+}
+
+.hero .profile-frame .frame-corner-tl {
+  top: -5px;
+  left: -5px;
+  border-top-width: 3px;
+  border-left-width: 3px;
+}
+
+.hero .profile-frame .frame-corner-tr {
+  top: -5px;
+  right: -5px;
+  border-top-width: 3px;
+  border-right-width: 3px;
+}
+
+.hero .profile-frame .frame-corner-bl {
+  bottom: -5px;
+  left: -5px;
+  border-bottom-width: 3px;
+  border-left-width: 3px;
+}
+
+.hero .profile-frame .frame-corner-br {
+  bottom: -5px;
+  right: -5px;
+  border-bottom-width: 3px;
+  border-right-width: 3px;
+}
+
+/* Hover: lift the portrait and strengthen the frame */
+@media (hover: hover) and (pointer: fine) {
+  .hero .profile-frame:hover {
+    transform: translateY(-7px);
+  }
+
+  .hero .profile-frame:hover::before {
+    transform: translate(19px, 19px);
+    background: var(--orange);
+  }
+
+  .hero .profile-frame:hover::after {
+    top: -19px;
+    left: -19px;
+  }
+
+  .hero .profile-frame:hover img,
+  .hero .profile-frame:hover .profile-photo {
+    filter: grayscale(0%) contrast(1.07);
+    box-shadow: 0 20px 42px rgba(34, 40, 32, 0.18);
+  }
+
+  .hero .profile-frame:hover .frame-corner {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+/* Gentle floating animation */
+@keyframes profileFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero .profile-frame {
+    animation: profileFloat 5s ease-in-out infinite;
+  }
+
+  .hero .profile-frame:hover {
+    animation-play-state: paused;
+  }
+}
+
+/* Mobile spacing */
+@media (max-width: 640px) {
+  .hero .profile-frame::before {
+    transform: translate(8px, 8px);
+  }
+
+  .hero .profile-frame::after {
+    top: -8px;
+    left: -8px;
+    right: 8px;
+    bottom: 8px;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .hero .profile-frame,
+  .hero .profile-frame::before,
+  .hero .profile-frame::after,
+  .hero .profile-frame img {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+```
