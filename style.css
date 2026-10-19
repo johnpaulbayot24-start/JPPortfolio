@@ -586,3 +586,177 @@ button:focus-visible {
     border-radius: 0 !important;
     overflow: visible !important;
 }
+```css
+/* ========================================
+   HERO SECTION — PROFILE PHOTO VERSION
+======================================== */
+
+/* Keep the hero layout balanced */
+.hero {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: center;
+  gap: 40px;
+  min-height: 670px;
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+
+/* Profile card container */
+.hero-art {
+  position: relative;
+  width: 100%;
+  max-width: 450px;
+  min-height: 430px;
+  height: auto;
+  margin-inline: auto;
+  padding: 30px 24px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+
+  background: var(--lime);
+  border: 2px solid var(--ink);
+
+  /* Square frame */
+  border-radius: 0;
+  overflow: visible;
+}
+
+/* Actual profile photo */
+.hero-art img.profile-photo {
+  display: block;
+  width: 280px;
+  height: 280px;
+  max-width: 100%;
+
+  object-fit: cover;
+  object-position: center;
+
+  /* Restore the visible photo frame */
+  border: 4px solid var(--ink);
+  border-radius: 0;
+  outline: none;
+  clip-path: none;
+
+  /* Subtle offset shadow */
+  box-shadow: 8px 8px 0 var(--orange);
+
+  margin: 0 8px 8px 0;
+  flex-shrink: 0;
+}
+
+/* Name */
+.hero-art h2 {
+  font-family: var(--head);
+  font-size: 27px;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.8px;
+  text-align: center;
+  margin: 8px 0 0;
+}
+
+/* Job title */
+.hero-art p {
+  font-family: var(--body);
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  color: var(--ink);
+  margin: 0;
+}
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    min-height: auto;
+    padding-top: 60px;
+    padding-bottom: 75px;
+  }
+
+  .hero-content {
+    width: 100%;
+    max-width: 720px;
+  }
+
+  .hero-art {
+    width: 100%;
+    max-width: 450px;
+    min-height: 410px;
+  }
+
+  .hero-art img.profile-photo {
+    width: 270px;
+    height: 270px;
+  }
+}
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 650px) {
+  .hero {
+    padding-top: 45px;
+    padding-bottom: 60px;
+    gap: 35px;
+  }
+
+  .hero h1 {
+    font-size: clamp(43px, 11vw, 65px);
+    letter-spacing: -2px;
+  }
+
+  .hero-art {
+    max-width: 100%;
+    min-height: 360px;
+    padding: 22px 16px;
+  }
+
+  .hero-art img.profile-photo {
+    width: 220px;
+    height: 230px;
+  }
+
+  .hero-art h2 {
+    font-size: 25px;
+  }
+
+  .hero-art p {
+    font-size: 13px;
+  }
+
+  .hero-note {
+    margin-top: 35px;
+  }
+}
+
+/* ========================================
+   SMALL PHONES
+======================================== */
+
+@media (max-width: 380px) {
+  .hero-art {
+    min-height: 320px;
+    padding: 18px 12px;
+  }
+
+  .hero-art img.profile-photo {
+    width: 190px;
+    height: 200px;
+  }
+
+  .hero-art h2 {
+    font-size: 23px;
+  }
+}
+```
