@@ -1,4 +1,4 @@
-
+```css
 :root {
   --bg: #f5f3eb;
   --dark: #222820;
@@ -197,7 +197,7 @@ h2 {
   margin-top: 25px;
 }
 
-/* HERO */
+/* HERO SECTION */
 
 .hero {
   min-height: 650px;
@@ -212,26 +212,44 @@ h2 {
   max-width: 520px;
 }
 
+/* SQUARE PROFILE CONTAINER */
+
 .hero-art {
   min-height: 420px;
   background: var(--lime);
   border: 2px solid var(--dark);
-  border-radius: 48% 48% 8px 8px;
+
+  /* Remove the rounded arch */
+  border-radius: 0 !important;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
   padding: 30px;
-  overflow: hidden;
+
+  /* Prevent clipping of the profile photo */
+  overflow: visible;
 }
 
-.profile-photo {
-    width: 280px;
-    height: 280px;
-    object-fit: cover;
-    display: block;
-    border-radius: 0 !important;
+/* SQUARE PROFILE PHOTO */
+
+.hero-art img.profile-photo {
+  width: 280px;
+  height: 280px;
+  max-width: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+
+  /* Force all four corners to be square */
+  border-radius: 0 !important;
+  clip-path: none !important;
+
+  border: 3px solid var(--dark);
+  margin: 0 auto 20px;
+  flex-shrink: 0;
 }
 
 .hero-art h2 {
@@ -395,7 +413,7 @@ footer {
   color: var(--green);
 }
 
-/* TABLETS AND MOBILE */
+/* TABLETS */
 
 @media (max-width: 900px) {
   nav ul {
@@ -415,18 +433,10 @@ footer {
     padding: 22px;
   }
 
-  
-.profile-photo {
-  display: block;
-  width: 280px;
-  height: 280px;
-  object-fit: cover;
-  object-position: center top;
-  border: 3px solid var(--dark);
-  border-radius: 0;
-  margin-bottom: 20px;
-}
-
+  .hero-art img.profile-photo {
+    width: 240px;
+    height: 260px;
+  }
 
   .skills-grid,
   .projects-grid {
@@ -437,6 +447,8 @@ footer {
     padding: 20px;
   }
 }
+
+/* MOBILE */
 
 @media (max-width: 750px) {
   .menu-toggle {
@@ -484,7 +496,7 @@ footer {
     margin-inline: auto;
   }
 
-  .profile-photo {
+  .hero-art img.profile-photo {
     width: 220px;
     height: 260px;
   }
@@ -506,6 +518,8 @@ footer {
     margin-bottom: 25px;
   }
 }
+
+/* SMALL MOBILE */
 
 @media (max-width: 420px) {
   .container {
@@ -536,7 +550,7 @@ footer {
     padding: 20px;
   }
 
-  .profile-photo {
+  .hero-art img.profile-photo {
     width: 190px;
     height: 235px;
   }
@@ -572,18 +586,4 @@ button:focus-visible {
     animation-iteration-count: 1 !important;
   }
 }
-/* Force profile image and its container to be square */
-.profile-photo,
-.profile-image-container,
-.profile-container img {
-    border-radius: 0 !important;
-    clip-path: none !important;
-    overflow: visible !important;
-}
-
-/* Remove rounded corners from the image wrapper */
-.profile-image-container,
-.profile-container {
-    border-radius: 0 !important;
-    overflow: visible !important;
-}
+```
