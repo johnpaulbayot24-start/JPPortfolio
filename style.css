@@ -567,3 +567,24 @@ button:focus-visible {
     animation-iteration-count: 1 !important;
   }
 }
+
+.project-image {
+  width: 100%;
+  height: 200px;
+  margin: 16px 0;
+  overflow: hidden;
+  border-radius: 0; /* Square corners */
+}
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  border-radius: 0; /* Prevent rounded image corners */
+  transition: transform 0.3s ease;
+}
+
+.card:hover .project-image img {
+  transform: scale(1.05);
+}
